@@ -1,7 +1,30 @@
 .temp{
-  margin-top: 200rpx;
+  /* margin-top: 200rpx; */
   text-align: center;
   font-size: 200rpx;
   line-height: 280rpx;
   opacity: 0.8;
+}
+.description{
+  text-align: center;
+  font-size: 40rpx;
+  line-height: 56rpx;
+  opacity: 0.65;
+}
+.weather-wrapper{
+  /* height: 760rpx;
+  width: 750rpx; */
+  /* 174+250+56+280=760 */
+  padding-top: 174rpx;
+  padding-bottom: 250rpx;
+  /* background-color: moccasin; */
+  position: relative;
+}
+.weather-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
