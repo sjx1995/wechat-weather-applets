@@ -3,3 +3,17 @@
   <view class="temp">{{nowTemp}}</view>
   <view class="description">{{nowWeather}}</view>
 </view>
+<view class="timeTip">
+  <image src="/img/time-icon.png" class="timeIcon"></image>
+  <view class="timeText">未来24小时天气预报</view>
+</view>
+<!-- 横向滚动容器 -->
+<scroll-view scroll-x>
+  <view class="forecastList">
+    <view class="tinyBox" wx:for="{{[1,2,3,4,5,6,7,8,9]}}">
+      <view class="forecastTime">{{item}}</view>
+      <image class="forecastIcon" src='/img/heavyrain-icon.png'></image>
+      <view class="forecastTemp">{{item}}</view>
+    </view>
+  </view>
+</scroll-view>

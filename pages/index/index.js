@@ -39,7 +39,7 @@ Page({
     wx.request({
       url: 'https://test-miniprogram.com/api/weather/now',
       data: {
-        city: "兰州市",
+        city: "北京市",
       },
       header: {
         'content-type': 'application/json'

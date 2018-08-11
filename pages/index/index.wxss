@@ -28,3 +28,46 @@
   width: 100%;
   z-index: -1;
 }
+.timeTip {
+  display: flex;
+  text-align: center;
+  /* background: orange; */
+  margin-top: 40rpx;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+.timeText {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+}
+.timeIcon {
+  margin-right: 10rpx;
+  height: 28rpx;
+  width: 36rpx;
+  margin-top: 7rpx;
+}
+.forecastList {
+  display: flex;
+}
+.tinyBox {
+  background: orange;
+  width: 150rpx;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin-right: 30rpx;
+  align-items: center;
+}
+.forecastTime {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.forecastIcon {
+  height: 90rpx;
+  width: 90rpx;
+}
+.forecastTemp {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
