@@ -10,10 +10,10 @@
 <!-- 横向滚动容器 -->
 <scroll-view scroll-x>
   <view class="forecastList">
-    <view class="tinyBox" wx:for="{{[1,2,3,4,5,6,7,8,9]}}">
-      <view class="forecastTime">{{item}}</view>
-      <image class="forecastIcon" src='/img/heavyrain-icon.png'></image>
-      <view class="forecastTemp">{{item}}</view>
+    <view class="forecastItem" wx:for="{{hourlyWeather}}">
+      <view class="forecastTime">{{item.time}}</view>
+      <image class="forecastIcon" src='{{item.icon}}'></image>
+      <view class="forecastTemp">{{item.temp}}</view>
     </view>
   </view>
 </scroll-view>

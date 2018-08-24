@@ -28,7 +28,8 @@ Page({
   data: {
     nowTemp: '',
     nowWeather: '',
-    wSrc: ''
+    wSrc: '',
+    forecast: []
   },
   onLoad() {
     this.getNow()  
@@ -58,6 +59,22 @@ Page({
         wx.setNavigationBarColor({
           frontColor: '#ffffff',
           backgroundColor: wBgColorName[weather],
+        })
+        let forecast = res.data.result.forecast
+        //获取当前时间 小时
+        let nowHour = new Date().getHours()
+        //渲染未来几小时天气预报
+        let hourlyWeather = []
+        for (var i = 0; i < 24; i += 3){
+          hourlyWeather.push({
+            time: (i + nowHour) % 24 + '时',
+            icon: '/img/' +forecast[i/3].weather + '-icon.png',
+            temp: forecast[i/3].temp + '°'
+          })
+        }
+        hourlyWeather[0].time = '现在'
+        this.setData({
+          hourlyWeather: hourlyWeather
         })
         console.log("/img/" + weather + "-bg.png")
       },
