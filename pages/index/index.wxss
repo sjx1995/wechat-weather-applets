@@ -74,3 +74,25 @@
   font-size: 40rpx;
   line-height: 56rpx;
 }
+.todayInformation {
+  display: flex;
+  bottom: 0rpx;
+  left: 40rpx;
+  right: 40rpx;
+  height: 90rpx;
+  position: absolute;
+  border-top: 1rpx, solid, rgba(0, 0, 0, 0.1);
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+  align-items: center;
+}
+.todayTemp {
+  padding-right: 30rpx;
+  text-align: right;
+  flex-grow: 1;
+}
+.arrow {
+  width: 13rpx;
+  height: 24rpx;
+}

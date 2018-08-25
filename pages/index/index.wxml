@@ -2,6 +2,11 @@
   <image src="{{wSrc}}" mode="scaleToFill" class="weather-bg"></image>
   <view class="temp">{{nowTemp}}</view>
   <view class="description">{{nowWeather}}</view>
+  <view class="todayInformation">
+    <view class="todayTime">{{todayDate}}</view>
+    <view class="todayTemp">{{todayTemp}}</view>
+    <image src="/img/arrow.png" class="arrow"></image>
+  </view>
 </view>
 <view class="timeTip">
   <image src="/img/time-icon.png" class="timeIcon"></image>

@@ -46,7 +46,7 @@ Page({
         'content-type': 'application/json'
       },
       success: res => {
-        // console.log(res.data)
+        console.log(res.data)
         let result = res.data.result
         // console.log("/img/" + weather + "-bg.png")
         //显示现在天气
@@ -85,6 +85,12 @@ Page({
           this.setData({
             hourlyWeather: hourlyWeather
           })
+        //显示今日天气
+        let date = new Date()
+        this.setData({
+          todayDate: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} 今天`,
+          todayTemp: `${result.today.minTemp}°-${result.today.maxTemp}°`
+        })
       },
       //若callback不为空则执行callback()
       complete: () => {
