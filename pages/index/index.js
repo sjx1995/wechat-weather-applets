@@ -50,28 +50,28 @@ Page({
         let result = res.data.result
         // console.log("/img/" + weather + "-bg.png")
         //显示现在天气
-          let temp = result.now.temp
-          let weather = result.now.weather
-          // console.log(temp, weather)
-          this.setData({
+        let temp = result.now.temp
+        let weather = result.now.weather
+        // console.log(temp, weather)
+        this.setData({
             nowTemp: temp + '°',
             nowWeather: weatherName[weather],
             wSrc: '/img/' + weather + '-bg.png',
             wBgColor: wBgColorName[weather],
-          })
-          wx.setNavigationBarColor({
+        })
+        wx.setNavigationBarColor({
             frontColor: '#ffffff',
             backgroundColor: wBgColorName[weather],
-          })
-          // console.log('1')    
+        })
+        // console.log('1')    
         //显示未来7天天气
-          let forecast = result.forecast
-          //获取当前时间 小时
-          let nowHour = new Date().getHours()
-          //渲染未来几小时天气预报
-          let hourlyWeather = []
-          // console.log('2')
-          for (var i = 0; i < 24; i += 3) {
+        let forecast = result.forecast
+        //获取当前时间 小时
+        let nowHour = new Date().getHours()
+        //渲染未来几小时天气预报
+        let hourlyWeather = []
+        // console.log('2')
+        for (var i = 0; i < 24; i += 3) {
             // console.log('3')
             hourlyWeather.push({
               time: (i + nowHour) % 24 + '时',
@@ -79,12 +79,12 @@ Page({
               temp: forecast[i / 3].temp + '°'
             })
             // console.log(forecast[i / 3].weather, temp)
-          }
-          hourlyWeather[0].time = '现在'
-          // console.log('4')
-          this.setData({
+        }
+        hourlyWeather[0].time = '现在'
+        // console.log('4')
+        this.setData({
             hourlyWeather: hourlyWeather
-          })
+        })
         //显示今日天气
         let date = new Date()
         this.setData({

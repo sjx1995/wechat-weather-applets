@@ -1,8 +1,8 @@
 <view class="forecastItem" wx:for="{{forecastItem}}">
   <view class="forecastDate">
-    <view class="week">{{week}}</view>
-    <view class="date">{{date}}</view>
+    <view class="week">{{item.week}}</view>
+    <view class="date">{{item.date}}</view>
   </view>
-  <view class="forecastTemp">{{temp}}</view>
-  <image class="forecastIcon" src="/img/sunny-icon.png"></image>
+  <view class="forecastTemp">{{item.temp}}</view>
+  <image class="forecastIcon" src="{{item.srcIcon}}"></image>
 </view>
