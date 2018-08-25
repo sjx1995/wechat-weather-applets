@@ -99,6 +99,8 @@ Page({
     })
   },
   onTapWeather(){
-    wx.showToast()
+    wx.navigateTo({
+      url: '/pages/list/list',
+    })
   }
 })
