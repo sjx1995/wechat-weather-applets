@@ -98,4 +98,7 @@ Page({
       }
     })
   },
+  onTapWeather(){
+    wx.showToast()
+  }
 })
