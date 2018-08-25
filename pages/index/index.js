@@ -46,42 +46,50 @@ Page({
         'content-type': 'application/json'
       },
       success: res => {
-        console.log(res.data)
-        let temp = res.data.result.now.temp
-        let weather = res.data.result.now.weather
-        console.log(temp, weather)
-        this.setData({
-          nowTemp: temp + '°',
-          nowWeather: weatherName[weather],
-          wSrc: '/img/' + weather + '-bg.png',
-          wBgColor: wBgColorName[weather],
-        })
-        wx.setNavigationBarColor({
-          frontColor: '#ffffff',
-          backgroundColor: wBgColorName[weather],
-        })
-        let forecast = res.data.result.forecast
-        //获取当前时间 小时
-        let nowHour = new Date().getHours()
-        //渲染未来几小时天气预报
-        let hourlyWeather = []
-        for (var i = 0; i < 24; i += 3){
-          hourlyWeather.push({
-            time: (i + nowHour) % 24 + '时',
-            icon: '/img/' +forecast[i/3].weather + '-icon.png',
-            temp: forecast[i/3].temp + '°'
+        // console.log(res.data)
+        let result = res.data.result
+        // console.log("/img/" + weather + "-bg.png")
+        //显示现在天气
+          let temp = result.now.temp
+          let weather = result.now.weather
+          // console.log(temp, weather)
+          this.setData({
+            nowTemp: temp + '°',
+            nowWeather: weatherName[weather],
+            wSrc: '/img/' + weather + '-bg.png',
+            wBgColor: wBgColorName[weather],
           })
-        }
-        hourlyWeather[0].time = '现在'
-        this.setData({
-          hourlyWeather: hourlyWeather
-        })
-        console.log("/img/" + weather + "-bg.png")
+          wx.setNavigationBarColor({
+            frontColor: '#ffffff',
+            backgroundColor: wBgColorName[weather],
+          })
+          // console.log('1')    
+        //显示未来7天天气
+          let forecast = result.forecast
+          //获取当前时间 小时
+          let nowHour = new Date().getHours()
+          //渲染未来几小时天气预报
+          let hourlyWeather = []
+          // console.log('2')
+          for (var i = 0; i < 24; i += 3) {
+            // console.log('3')
+            hourlyWeather.push({
+              time: (i + nowHour) % 24 + '时',
+              icon: '/img/' + forecast[i / 3].weather + '-icon.png',
+              temp: forecast[i / 3].temp + '°'
+            })
+            // console.log(forecast[i / 3].weather, temp)
+          }
+          hourlyWeather[0].time = '现在'
+          // console.log('4')
+          this.setData({
+            hourlyWeather: hourlyWeather
+          })
       },
       //若callback不为空则执行callback()
       complete: () => {
         callback && callback()
       }
     })
-  }
+  },
 })
